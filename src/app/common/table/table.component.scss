@@ -1,0 +1,96 @@
+
+.expense-table-wrapper {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    max-height: 500px; 
+    overflow-y: auto;
+    border: 1px solid #B9B9B9;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    box-sizing: border-box;
+}
+
+.expense-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #FFF8FF;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.9375rem, 1.3vw, 1rem);
+    color: black;
+    padding: 0.5rem 0.625rem;
+    border-bottom: 1px solid #B9B9B9;
+    z-index: 2;
+}
+
+.expense-table tbody td {
+    border-bottom: 1px solid #B9B9B9;
+    padding: 0.5rem 0.625rem;
+    text-align: left;
+}
+
+.expense-table tbody tr {
+    background-color: white;
+}
+
+.expense-table tbody tr:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.expense-table-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.expense-table-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+.expense-table-wrapper::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .expense-table-wrapper {
+        max-height: none;
+        overflow-y: visible;
+        border: none;
+    }
+
+    .expense-table {
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    }
+
+    .expense-table thead {
+        display: none;
+    }
+
+    .expense-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #B9B9B9;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .expense-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 1px solid #B9B9B9;
+    }
+
+    .expense-table tbody td:last-child {
+        border-bottom: none;
+    }
+}

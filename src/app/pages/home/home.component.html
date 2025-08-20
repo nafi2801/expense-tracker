@@ -1,0 +1,166 @@
+<h1>Welcome back, User!</h1>
+
+<!-- Bouton flottant -->
+<button class="add-btn" [ngClass]="{ 'open': modalOpen }" (click)="toggleModal()">
+    <span *ngIf="!modalOpen">+</span>
+    <span *ngIf="modalOpen" class="close">×</span>
+  </button>
+  
+  <!-- Modal -->
+<div class="modal" *ngIf="modalOpen">
+    <div class="modal-content">
+      <h2 class="modal-title">Add a Transaction</h2>
+  
+      <div class="toggle-buttons">
+        <button type="button" 
+                [ngClass]="{ selected: transactionType === 'Expense' }" 
+                (click)="transactionType = 'Expense'">Expense</button>
+        <button type="button" 
+                [ngClass]="{ selected: transactionType === 'Income' }" 
+                (click)="transactionType = 'Income'">Income</button>
+      </div>
+  
+      <input type="text" placeholder="Title" [(ngModel)]="transaction.name" name="name" />
+  
+      <form (ngSubmit)="submitForm()">
+        <input type="number" placeholder="Amount" [(ngModel)]="transaction.amount" name="amount" required />
+  
+        <select [(ngModel)]="transaction.category" name="category" required>
+          <option value="" disabled selected>Category</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Transport">Transport</option>
+          <option value="Outings">Outings</option>
+          <option value="Maintenance">Maintenance</option>
+        </select>
+  
+        <select [(ngModel)]="transaction.paymentMethod" name="paymentMethod" required>
+          <option value="" disabled selected>Payment Method</option>
+          <option value="Cash">Cash</option>
+          <option value="Card">Card</option>
+          <option value="Transfer">Transfer</option>
+        </select>
+  
+        <input type="date" [(ngModel)]="transaction.date" name="date" required />
+  
+        <button type="submit" class="submit-btn">+</button>
+      </form>
+    </div>
+  </div>
+  
+
+
+<div class="container">
+
+    <div class="left">
+
+        <div class="kpi">
+            <div class="kpicard">
+                <p class="title">Current Balance</p>
+                <p class="amt">250,000 CFA</p>
+            </div>
+            <div class="kpicard">
+                <p class="title">Total Savings</p>
+                <p class="amt">2,150,000 CFA</p>
+            </div>
+        </div>
+
+        <div class="summary">
+            <div class="planned">Planned Expenses</div>
+
+            <div class="card">
+                <div class="l1">
+                    <p>Rent</p>
+                    <p>150,000</p>
+                </div>
+                <div class="l2">
+                    <p class="type">Utilities</p>
+                    <p class="status">Paid</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="l1">
+                    <p>Electricity Bill</p>
+                    <p>30,000</p>
+                </div>
+                <div class="l2">
+                    <p class="type">Utilities</p>
+                    <p class="status">Paid</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="l1">
+                    <p>Groceries</p>
+                    <p>50,000</p>
+                </div>
+                <div class="l2">
+                    <p class="type">Utilities</p>
+                    <p class="status">Paid</p>
+                </div>
+            </div>
+
+            <a href="" class="btn">Plan more!</a>
+
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="last">Last transactions</div>
+        <div class="history">
+            <p class="date">Today</p>
+            <div class="card">
+                <div class="l1">
+                    <p>Rent</p>
+                    <p>150,000</p>
+                </div>
+                <div class="l2">
+                    <p class="type">Utilities</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="l1">
+                    <p>Electricity Bill</p>
+                    <p>30,000</p>
+                </div>
+                <div class="l2">
+                    <p class="type">Utilities</p>
+                </div>
+            </div>
+
+            <p class="date">15 May 2025</p>
+            <div class="card">
+                <div class="l1">
+                    <p>Resto</p>
+                    <p>10,000</p>
+                </div>
+                <div class="l2">
+                    <p class="type">Outings</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="l1">
+                    <p>Bus Card</p>
+                    <p>3,600</p>
+                </div>
+                <div class="l2">
+                    <p class="type">Transport</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="l1">
+                    <p>Hair Salon</p>
+                    <p>25,000</p>
+                </div>
+                <div class="l2">
+                    <p class="type">Maintenance</p>
+                </div>
+            </div>
+
+            <a routerLink="/seeall">See All transactions</a>
+        </div>
+
+    </div>
+
+</div>

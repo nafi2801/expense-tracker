@@ -1,0 +1,29 @@
+<div class="container">
+    <div>
+      <div class="title">
+        <h1>Welcome to your budget tracker!</h1>
+      </div>
+      <form (ngSubmit)="login()">
+  
+        <div class="email">
+          <label>Email</label><br>
+          <input type="text" placeholder="E-mail" [(ngModel)]="email" name="email" required>
+        </div>
+  
+        <div class="mdp">
+          <label>Password</label><br>
+          <input type="password" placeholder="***************" [(ngModel)]="password" name="password" required>
+        </div>
+  
+        <div class="btn">
+          <input type="submit" value="Log In">
+        </div>
+  
+      </form>
+  
+      <div class="link">
+        <a href="http://">No account yet? Sign up!</a>
+      </div>
+    </div>
+  </div>
+  
